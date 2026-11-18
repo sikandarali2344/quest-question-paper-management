@@ -1,47 +1,332 @@
-# QUEST Question Paper Management System
+# 🎓 QUEST Question Paper Management System
 
-## Login accounts
+<p align="center">
+  <strong>A Complete Digital Examination & Academic Assessment Management Platform</strong>
+  <br>
+  Developed for QUEST University
+</p>
 
-| Super Admin  `admin@gmail.com   password 1234567890
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-Backend-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bootstrap-UI-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+</p>
 
- 
-| Teacher       draijaz@gmail.com  password 1111111111
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Web%20Application-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/Environment-XAMPP-orange?style=flat-square" />
+  <img src="https://img.shields.io/badge/Project-Academic%20Management-success?style=flat-square" />
+</p>
 
-## Demo screenshots
+---
 
-- [Login page](demo/login-page.png)
-- [Admin dashboard](demo/admin-dashboard.png)
-- [Saved papers](demo/admin-saved-papers.png)
-- [Question paper preview](demo/question-paper-preview.png)
+## 🌟 Overview
 
-## Run with XAMPP
+**QUEST Question Paper Management System** is a web-based academic management application designed to digitize and simplify examination paper preparation, academic assessment, and student marks management.
 
-1. Place this folder at `C:\xampp\htdocs\quest-paper-management`.
-2. Start **Apache** and **MySQL** in the XAMPP Control Panel.
-3. For a fresh install or a shared ZIP, open phpMyAdmin at `http://localhost/phpmyadmin` and import `database/schema.sql`. This is the one complete SQL file for all application features.
-4. If MySQL has a password or a different database name, update `config/database.php`.
-5. Open `http://localhost/quest-paper-management/setup.php`, create the first super admin, then delete `setup.php`.
-6. Sign in at `http://localhost/quest-paper-management/login.php`.
+The platform provides separate dashboards for Super Admins and Teachers, allowing efficient management of examination papers, academic records, grading policies, and student performance.
 
-## Existing installations
+It replaces manual examination preparation workflows with a centralized, structured, and database-driven system.
 
-`database/schema.sql` creates the complete database for a fresh installation. Do not import it over an existing database containing records; back up existing data and arrange a migration before upgrading.
+## 📸 Demo Screenshots
 
-## Application features
+Explore the application's interface and major modules.
 
-The database supports department and teacher management, academic years and semesters, batches and grading policies, question papers, and teacher student-mark sheets. Teachers can manage marks for their assigned subjects, calculate grades using the batch policy, and export or print registers.
+| Login Page | Admin Dashboard |
+|---|---|
+| ![Login Page](demo/login-page.png) | ![Admin Dashboard](demo/admin-dashboard.png) |
 
-## Paper workflow
+| Saved Papers | Question Paper Preview |
+|---|---|
+| ![Saved Papers](demo/admin-saved-papers.png) | ![Paper Preview](demo/question-paper-preview.png) |
 
-- Create a paper, choose department, batch, year/semester, subject and an exam type (Midterm, Final or Practical), then add questions. The subject list reloads for the selected semester; teachers see only their active assignments, while administrators can select any active subject in that semester.
-- Midterm and Final papers support descriptive, MCQ, fill-in-the-blanks and true/false questions. Practical papers use MCQ, fill-in-the-blanks and true/false only, with no CLO, taxonomy or PLO fields/columns. Practical printouts automatically group questions under type-specific section headings, restart numbering at 1 in each section, and show section marks; MCQ and True/False choices include empty checkboxes. MCQs require at least two options and a correct answer; the answer key is not printed.
-- Optional CLO, taxonomy and PLO values can be saved for each non-practical question and appear in a clean, bordered examination table on the printed paper.
-- Add a JPG, PNG or WebP image to an individual question if needed (maximum 5 MB). Question text, image, options and marks are saved together.
-- Save drafts, reopen and edit them, preview a paper, then use **Print / Save as PDF** in the browser. The printout uses the QUEST logo and fills in the department, academic year, semester, subject, exam details, applicable outcomes and marks from the saved records. Practical printouts omit CLO, taxonomy and PLO columns. Draft papers can be finalized once their marks meet the validation rules.
-- Search papers by department, academic year, semester, subject/exam title, exam type and date.
-- Teachers can filter Saved Papers by subject; clicking a subject name opens the paper list filtered to that subject. Each paper retains its subject and semester association.
-- Super Admins can create, edit and delete grading policies under **Grading Policies**, then maintain their percentage thresholds, grade labels and grade points under **Grade Bands**. Assign the policy to batches under **Batches**. Keep a band with a 0% minimum for every policy; policies assigned to a batch cannot be deleted.
-- Teachers can maintain a private, database-backed marks register for each assigned subject, semester, batch and exam type. Theory Final sheets validate the official 100-mark (sessional 20 + midterm 20 + final 60) or 50-mark (sessional 10 + midterm 10 + final 30) allocation. Practical sheets default to the 30/10/20/40 assessment weights. Totals, percentages, grades and grade points calculate automatically using the batch grading policy selected by an administrator. Download the register as an Excel-compatible CSV or print/save it as a PDF.
-- Records linked to saved papers cannot be hard-deleted. The admin receives a message explaining the links and can deactivate the record instead, preserving historical papers.
+---
 
-Bootstrap and icons load from a CDN, so an internet connection is needed for the application styling.
+## ✨ Key Features
+
+### 🔐 Authentication & User Management
+- Role-based login for Super Admin and Teachers.
+- Department and teacher management.
+- Active teacher assignments and access restrictions.
+
+### 📝 Question Paper Management
+- Create, edit, save, and manage examination papers.
+- Midterm, Final, and Practical examination types.
+- Descriptive, MCQ, Fill in the Blanks, and True/False questions.
+- Individual question image uploads.
+- Automatic marks validation.
+- Draft and finalized paper management.
+
+### 🎯 Academic Outcome Mapping
+- Course Learning Outcomes (CLOs).
+- Bloom's Taxonomy.
+- Program Learning Outcomes (PLOs).
+- Optional outcome mapping for non-practical questions.
+
+### 🖨️ Professional Examination Printing
+- QUEST examination paper layout.
+- Automatic department and semester information.
+- Clean examination tables and question formatting.
+- Print or save papers as PDF.
+- Practical paper sections with separate numbering and marks.
+- MCQ and True/False empty checkboxes.
+- Answer keys are not displayed in printed papers.
+
+### 📊 Student Marks Management
+- Subject-wise and semester-wise marks registers.
+- Teacher-specific subject assignments.
+- Automatic totals and percentage calculations.
+- Automatic grade and grade-point calculation.
+- Configurable grading policies and grade bands.
+- CSV export and PDF printing.
+
+### 🔎 Search & Data Management
+- Search papers by department, batch, semester, subject, exam type, and date.
+- Filter saved papers by subject.
+- Preserve historical records.
+- Deactivate linked records instead of deleting them.
+
+---
+
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| PHP | Backend development |
+| MySQL | Database management |
+| HTML5 | Application structure |
+| CSS3 | Styling and layouts |
+| JavaScript | Interactive functionality |
+| Bootstrap | Responsive UI components |
+| Bootstrap Icons | Interface icons |
+| XAMPP | Local development environment |
+
+---
+
+## ⚙️ Installation & Setup
+
+### Requirements
+- Windows / Linux
+- XAMPP
+- PHP
+- MySQL
+- Modern web browser
+- Internet connection for Bootstrap and icon CDN resources
+
+### Step 1 — Clone Repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/quest-question-paper-management.git
+```
+
+### Step 2 — Move Project Folder
+
+Place the project inside:
+
+```text
+C:\xampp\htdocs\quest-paper-management
+```
+
+### Step 3 — Start XAMPP
+
+Open XAMPP Control Panel and start:
+
+- Apache
+- MySQL
+
+### Step 4 — Import Database
+
+Open:
+
+```text
+http://localhost/phpmyadmin
+```
+
+Import the complete database file:
+
+```text
+database/schema.sql
+```
+
+**Important:** This SQL file is intended for fresh installations. Do not import it over an existing database containing records.
+
+### Step 5 — Configure Database
+
+If your MySQL password or database name is different, update:
+
+```text
+config/database.php
+```
+
+### Step 6 — Create Super Admin
+
+Open:
+
+```text
+http://localhost/quest-paper-management/setup.php
+```
+
+Create the first Super Admin account.
+
+After successful setup, delete `setup.php`.
+
+### Step 7 — Login
+
+Open:
+
+```text
+http://localhost/quest-paper-management/login.php
+```
+
+Your application is now ready to use!
+
+---
+
+## 🔄 Examination Paper Workflow
+
+```text
+        Super Admin / Teacher
+                 |
+                 ▼
+          Create New Paper
+                 |
+                 ▼
+       Select Academic Details
+                 |
+                 ▼
+        Select Examination Type
+                 |
+                 ▼
+          Add Questions
+                 |
+                 ▼
+       Add Marks & Outcomes
+                 |
+                 ▼
+           Save Draft
+                 |
+                 ▼
+          Preview Paper
+                 |
+                 ▼
+        Validate Total Marks
+                 |
+                 ▼
+        Finalize Examination
+                 |
+                 ▼
+         Print / Save as PDF
+```
+
+---
+
+## 📚 Academic Assessment
+
+The system supports different assessment structures.
+
+**Theory Final Examination**
+
+| Component | Marks |
+|---|---:|
+| Sessional | 20 |
+| Midterm | 20 |
+| Final | 60 |
+| **Total** | **100** |
+
+An alternative 50-mark allocation is also supported:
+
+| Component | Marks |
+|---|---:|
+| Sessional | 10 |
+| Midterm | 10 |
+| Final | 30 |
+| **Total** | **50** |
+
+**Practical Assessment**
+
+Default assessment weights:
+
+- Sessional: 30%
+- Midterm: 10%
+- Final: 20%
+- Practical: 40%
+
+Grades and grade points are calculated according to the grading policy assigned to each batch.
+
+---
+
+## 📁 Project Structure
+
+```text
+quest-paper-management/
+│
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── config/
+│   └── database.php
+│
+├── database/
+│   └── schema.sql
+│
+├── demo/
+│   ├── login-page.png
+│   ├── admin-dashboard.png
+│   ├── admin-saved-papers.png
+│   └── question-paper-preview.png
+│
+├── includes/
+│
+├── setup.php
+├── login.php
+├── index.php
+└── README.md
+```
+
+*Additional application files and folders are maintained in the repository.*
+
+---
+
+## 🔒 Database & Security Notes
+
+- Database-backed application records.
+- Role-based access restrictions.
+- Teachers can manage marks only for their assigned subjects.
+- MCQ correct answers are not displayed in printed examination papers.
+- Historical records linked to saved papers are protected from hard deletion.
+- Use secure passwords and never commit real credentials or private configuration files to a public repository.
+
+---
+
+## 🚀 Future Improvements
+
+Potential areas for further development:
+
+- Online examination scheduling.
+- Student portal integration.
+- Advanced academic analytics.
+- Automated examination reports.
+- Additional export formats.
+- Email notifications.
+
+---
+
+## 👨‍💻 Developer
+
+**Developed by Sikandar Ali**
+
+Computer Science Student  
+Quaid-e-Awam University of Engineering, Science & Technology (QUEST), Nawabshah
+
+**Project:** QUEST Question Paper Management System
+
+---
+
+<p align="center">
+  <strong>🎓 Digitizing Examination Management at QUEST University</strong>
+  <br>
+  <sub>Designed to make academic workflows more organized, efficient, and accessible.</sub>
+</p>
